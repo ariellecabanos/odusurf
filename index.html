@@ -42,7 +42,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 28px;
-      background: rgba(8, 17, 31, 0.55);
+      background: rgba(8, 17, 31, 0.58);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.15);
       color: white;
@@ -55,18 +55,18 @@
     }
 
     .logo-circle {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       border: 1px solid rgba(255,255,255,0.4);
       background: rgba(255,255,255,0.12);
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
       font-size: 11px;
       font-weight: bold;
       letter-spacing: 1px;
-      overflow: hidden;
     }
 
     .logo-circle img {
@@ -80,12 +80,12 @@
       font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      opacity: 0.75;
+      opacity: 0.78;
     }
 
     .brand-text span {
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.5px;
     }
 
@@ -93,7 +93,7 @@
       display: flex;
       gap: 22px;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .nav-links a:hover {
@@ -103,16 +103,16 @@
     .hero {
       min-height: 100vh;
       background:
-        linear-gradient(rgba(7, 16, 30, 0.32), rgba(7, 16, 30, 0.55)),
+        linear-gradient(rgba(7, 16, 30, 0.30), rgba(7, 16, 30, 0.58)),
         url('hero-photo.jpg') center/cover no-repeat;
       display: flex;
       align-items: flex-end;
-      padding: 120px 28px 70px;
+      padding: 120px 28px 72px;
       color: white;
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 780px;
     }
 
     .eyebrow {
@@ -120,20 +120,20 @@
       text-transform: uppercase;
       letter-spacing: 4px;
       margin-bottom: 12px;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .hero h1 {
-      font-size: 72px;
+      font-size: 74px;
       line-height: 0.95;
       margin-bottom: 20px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .hero p {
       font-size: 18px;
-      max-width: 680px;
-      color: rgba(255,255,255,0.9);
+      max-width: 700px;
+      color: rgba(255,255,255,0.92);
       margin-bottom: 28px;
     }
 
@@ -163,16 +163,16 @@
 
     .btn-secondary {
       border: 1px solid rgba(255,255,255,0.55);
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.10);
       color: white;
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.18);
     }
 
     .section {
-      padding: 80px 28px;
+      padding: 82px 28px;
     }
 
     .container {
@@ -196,7 +196,7 @@
     }
 
     .section-intro {
-      max-width: 760px;
+      max-width: 780px;
       color: #4b5a6d;
       font-size: 17px;
       margin-bottom: 36px;
@@ -238,22 +238,25 @@
 
     .dark-section .section-label,
     .dark-section .section-intro,
-    .dark-section .card p {
-      color: rgba(255,255,255,0.72);
+    .dark-section .card p,
+    .dark-section .cam-note {
+      color: rgba(255,255,255,0.74);
     }
 
     .dark-section h2,
-    .dark-section .card h3 {
+    .dark-section .card h3,
+    .dark-section .cam-box h3 {
       color: white;
     }
 
     .dark-section .card {
       background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.10);
       box-shadow: none;
     }
 
-    .calendar-box {
+    .calendar-box,
+    .cam-box {
       background: white;
       border-radius: 28px;
       padding: 32px;
@@ -261,8 +264,89 @@
       box-shadow: 0 8px 22px rgba(18, 32, 51, 0.06);
     }
 
+    .cam-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: none;
+    }
+
     .calendar-box p {
       color: #586679;
+    }
+
+    .cam-frame-wrap {
+      margin-top: 22px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .cam-frame {
+      width: 100%;
+      height: 520px;
+      border: 0;
+      background: #0e1725;
+    }
+
+    .cam-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .officer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 10px;
+    }
+
+    .officer-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #e8dfd0;
+      box-shadow: 0 8px 22px rgba(18, 32, 51, 0.06);
+    }
+
+    .officer-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: #d8d2c7;
+      overflow: hidden;
+    }
+
+    .officer-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .officer-info {
+      padding: 22px;
+    }
+
+    .officer-role {
+      font-size: 24px;
+      font-weight: 700;
+      color: #122033;
+      margin-bottom: 6px;
+    }
+
+    .officer-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #5f6b7c;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .officer-info p {
+      color: #586679;
+      font-size: 16px;
     }
 
     .footer {
@@ -273,22 +357,18 @@
       text-align: center;
     }
 
-    @media (max-width: 900px) {
-      .nav-links {
-        gap: 14px;
-        font-size: 12px;
+    @media (max-width: 980px) {
+      .card-grid,
+      .officer-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
       .hero h1 {
-        font-size: 52px;
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr 1fr;
+        font-size: 56px;
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       .navbar {
         padding: 14px 18px;
         flex-direction: column;
@@ -299,10 +379,11 @@
       .nav-links {
         flex-wrap: wrap;
         gap: 10px 16px;
+        font-size: 12px;
       }
 
       .hero {
-        padding: 150px 18px 46px;
+        padding: 150px 18px 50px;
       }
 
       .hero h1 {
@@ -321,8 +402,13 @@
         font-size: 32px;
       }
 
-      .card-grid {
+      .card-grid,
+      .officer-grid {
         grid-template-columns: 1fr;
+      }
+
+      .cam-frame {
+        height: 420px;
       }
     }
   </style>
@@ -331,7 +417,6 @@
   <header class="navbar">
     <div class="brand">
       <div class="logo-circle">
-        <!-- Replace logo.png with your actual logo file later -->
         <img src="logo.png" alt="ODU Surf Club logo" onerror="this.style.display='none'; this.parentNode.innerHTML='LOGO';" />
       </div>
       <div class="brand-text">
@@ -342,8 +427,9 @@
 
     <nav class="nav-links">
       <a href="#calendar">Calendar</a>
+      <a href="#surfcam">Surf Cam</a>
       <a href="#officers">Officers</a>
-      <a href="#events">Events Coming Up</a>
+      <a href="#events">Events</a>
       <a href="#sponsorships">Sponsorships</a>
     </nav>
   </header>
@@ -370,13 +456,45 @@
       <h2>Stay up to date with club events.</h2>
       <p class="section-intro">
         This section can hold your meeting dates, surf sessions, movie nights, fundraisers, beach cleanups,
-        or a Google Calendar embed later on.
+        contests, and upcoming collabs.
       </p>
       <div class="calendar-box">
         <h3 style="font-size: 24px; margin-bottom: 12px; color: #122033;">Upcoming calendar content goes here</h3>
         <p>
-          Later, you can replace this with an embedded calendar, event flyers, or a list of all your important dates.
+          Later, you can replace this with a Google Calendar embed, event flyers, or a full list of all your important dates.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="surfcam" class="section dark-section">
+    <div class="container">
+      <div class="section-label">Surf Cam</div>
+      <h2>Croatan surf cam</h2>
+      <p class="section-intro">
+        This section is set up for a Croatan surf cam. If the live cam does not display inside the page,
+        use the button below to open it directly.
+      </p>
+
+      <div class="cam-box">
+        <h3 style="font-size: 24px; margin-bottom: 8px;">Live Cam Viewer</h3>
+        <p class="cam-note">
+          Some surf cam providers block embeds on outside sites, so this may show a blank or blocked frame depending on the source.
+        </p>
+
+        <div class="cam-frame-wrap">
+          <iframe
+            class="cam-frame"
+            src="https://www.surfline.com/surf-report/croatan-jetty/584204214e65fad6a7709ce9"
+            title="Croatan Surf Cam"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="cam-actions">
+          <a class="btn btn-primary" href="https://www.surfline.com/surf-report/croatan-jetty/584204214e65fad6a7709ce9" target="_blank" rel="noopener noreferrer">Open Croatan Cam</a>
+          <a class="btn btn-secondary" href="https://www.surfline.com/surf-report/croatan-to-pendleton/5842041f4e65fad6a7708a26" target="_blank" rel="noopener noreferrer">Open Croatan to Pendleton</a>
+        </div>
       </div>
     </div>
   </section>
@@ -386,32 +504,74 @@
       <div class="section-label">Officers</div>
       <h2>Meet the team behind the club.</h2>
       <p class="section-intro">
-        Add your real officer names, photos, and bios here whenever you’re ready.
+        Add your real officer photos, names, and roles here. For now, this is fully set up with image placeholders.
       </p>
-      <div class="card-grid">
-        <div class="card">
-          <h3>President</h3>
-          <p>Leads the club and helps shape the vision for events, trips, and community.</p>
+
+      <div class="officer-grid">
+        <div class="officer-card">
+          <div class="officer-photo">
+            <img src="president.jpg" alt="President photo" onerror="this.style.display='none'; this.parentNode.style.display='flex'; this.parentNode.style.alignItems='center'; this.parentNode.style.justifyContent='center'; this.parentNode.style.color='#5f6b7c'; this.parentNode.style.fontWeight='700'; this.parentNode.innerHTML='President Photo';" />
+          </div>
+          <div class="officer-info">
+            <div class="officer-role">President</div>
+            <div class="officer-name">Add Name Here</div>
+            <p>Leads the club and helps shape the vision for events, trips, meetings, and community.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Vice President</h3>
-          <p>Keeps the club organized and helps everything run smoothly behind the scenes.</p>
+
+        <div class="officer-card">
+          <div class="officer-photo">
+            <img src="vice-president.jpg" alt="Vice President photo" onerror="this.style.display='none'; this.parentNode.style.display='flex'; this.parentNode.style.alignItems='center'; this.parentNode.style.justifyContent='center'; this.parentNode.style.color='#5f6b7c'; this.parentNode.style.fontWeight='700'; this.parentNode.innerHTML='Vice President Photo';" />
+          </div>
+          <div class="officer-info">
+            <div class="officer-role">Vice President</div>
+            <div class="officer-name">Add Name Here</div>
+            <p>Keeps the club organized and helps everything run smoothly behind the scenes.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Treasurers</h3>
-          <p>Manage club funds, budgets, and support for meetings, merch, and events.</p>
+
+        <div class="officer-card">
+          <div class="officer-photo">
+            <img src="treasurer-1.jpg" alt="Treasurer photo" onerror="this.style.display='none'; this.parentNode.style.display='flex'; this.parentNode.style.alignItems='center'; this.parentNode.style.justifyContent='center'; this.parentNode.style.color='#5f6b7c'; this.parentNode.style.fontWeight='700'; this.parentNode.innerHTML='Treasurer Photo';" />
+          </div>
+          <div class="officer-info">
+            <div class="officer-role">Treasurer</div>
+            <div class="officer-name">Add Name Here</div>
+            <p>Manages club funds, budgets, and financial support for events, merch, and club growth.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Marketing Chair</h3>
-          <p>Creates the club’s aesthetic, media, social presence, and overall visual identity.</p>
+
+        <div class="officer-card">
+          <div class="officer-photo">
+            <img src="treasurer-2.jpg" alt="Second Treasurer photo" onerror="this.style.display='none'; this.parentNode.style.display='flex'; this.parentNode.style.alignItems='center'; this.parentNode.style.justifyContent='center'; this.parentNode.style.color='#5f6b7c'; this.parentNode.style.fontWeight='700'; this.parentNode.innerHTML='Second Treasurer Photo';" />
+          </div>
+          <div class="officer-info">
+            <div class="officer-role">Treasurer</div>
+            <div class="officer-name">Add Name Here</div>
+            <p>Helps oversee club budgeting, reimbursements, and funding support for activities and events.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Events Chair</h3>
-          <p>Plans gatherings, movie nights, meetups, and helps make club life feel active and real.</p>
+
+        <div class="officer-card">
+          <div class="officer-photo">
+            <img src="marketing-chair.jpg" alt="Marketing Chair photo" onerror="this.style.display='none'; this.parentNode.style.display='flex'; this.parentNode.style.alignItems='center'; this.parentNode.style.justifyContent='center'; this.parentNode.style.color='#5f6b7c'; this.parentNode.style.fontWeight='700'; this.parentNode.innerHTML='Marketing Chair Photo';" />
+          </div>
+          <div class="officer-info">
+            <div class="officer-role">Marketing Chair</div>
+            <div class="officer-name">Add Name Here</div>
+            <p>Creates the club’s aesthetic, media, social presence, and overall visual identity.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Sponsorship Chair</h3>
-          <p>Builds connections with brands, local businesses, and potential supporters of the club.</p>
+
+        <div class="officer-card">
+          <div class="officer-photo">
+            <img src="events-sponsor-chair.jpg" alt="Events and Sponsor Chair photo" onerror="this.style.display='none'; this.parentNode.style.display='flex'; this.parentNode.style.alignItems='center'; this.parentNode.style.justifyContent='center'; this.parentNode.style.color='#5f6b7c'; this.parentNode.style.fontWeight='700'; this.parentNode.innerHTML='Events + Sponsor Chair Photo';" />
+          </div>
+          <div class="officer-info">
+            <div class="officer-role">Events + Sponsor Chair</div>
+            <div class="officer-name">Add Name Here</div>
+            <p>Plans club events and builds partnerships with local businesses and surf-related brands.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -419,10 +579,10 @@
 
   <section id="events" class="section">
     <div class="container">
-      <div class="section-label">Events Coming Up</div>
+      <div class="section-label">Events</div>
       <h2>What club life looks like.</h2>
       <p class="section-intro">
-        This section is for what’s actually happening next, from surf sessions to craft nights and movie nights.
+        Use this section for what is actually coming up next, from paddle-outs to movie nights.
       </p>
       <div class="card-grid">
         <div class="card">
@@ -431,11 +591,11 @@
         </div>
         <div class="card">
           <h3>Surf Sessions</h3>
-          <p>When the waves are up, use this section to promote your next paddle-out or meetup.</p>
+          <p>Promote your next paddle-out, session check, or beach meetup when the waves are good.</p>
         </div>
         <div class="card">
           <h3>Movie Nights</h3>
-          <p>Show off club film nights, community hangs, and surf-inspired events.</p>
+          <p>Show off club film nights, surf-inspired hangouts, and fundraiser events.</p>
         </div>
       </div>
     </div>
@@ -466,7 +626,7 @@
   </section>
 
   <footer class="footer">
-    ODU Surf Club • Norfolk / Virginia Beach • Follow along and join the community.
+    ODU Surf Club • Norfolk / Virginia Beach • Join the community.
   </footer>
 </body>
 </html>
