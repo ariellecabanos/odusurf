@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ODU Surf Club</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f1e7;
+      color: #122033;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 28px;
+      background: rgba(8, 17, 31, 0.55);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      color: white;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      overflow: hidden;
+    }
+
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+
+    .brand-text span {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.75;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(7, 16, 30, 0.32), rgba(7, 16, 30, 0.55)),
+        url('hero-photo.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 120px 28px 70px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      line-height: 0.95;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 680px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #08111f;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .section {
+      padding: 80px 28px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #5f6b7c;
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      color: #122033;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: #4b5a6d;
+      font-size: 17px;
+      margin-bottom: 36px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 8px 22px rgba(18, 32, 51, 0.06);
+      border: 1px solid #e8dfd0;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #122033;
+    }
+
+    .card p {
+      color: #586679;
+      font-size: 16px;
+    }
+
+    .tan-section {
+      background: #efe5d6;
+    }
+
+    .dark-section {
+      background: #08111f;
+      color: white;
+    }
+
+    .dark-section .section-label,
+    .dark-section .section-intro,
+    .dark-section .card p {
+      color: rgba(255,255,255,0.72);
+    }
+
+    .dark-section h2,
+    .dark-section .card h3 {
+      color: white;
+    }
+
+    .dark-section .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: none;
+    }
+
+    .calendar-box {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      border: 1px solid #e8dfd0;
+      box-shadow: 0 8px 22px rgba(18, 32, 51, 0.06);
+    }
+
+    .calendar-box p {
+      color: #586679;
+    }
+
+    .footer {
+      padding: 26px 28px 40px;
+      background: #08111f;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 14px;
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 14px 18px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+      }
+
+      .hero {
+        padding: 150px 18px 46px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 64px 18px;
+      }
+
+      .section h2 {
+        font-size: 32px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <div class="logo-circle">
+        <!-- Replace logo.png with your actual logo file later -->
+        <img src="logo.png" alt="ODU Surf Club logo" onerror="this.style.display='none'; this.parentNode.innerHTML='LOGO';" />
+      </div>
+      <div class="brand-text">
+        <small>Old Dominion University</small>
+        <span>ODU Surf Club</span>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#calendar">Calendar</a>
+      <a href="#officers">Officers</a>
+      <a href="#events">Events Coming Up</a>
+      <a href="#sponsorships">Sponsorships</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Norfolk • Virginia Beach • 757</div>
+      <h1>ODU Surf Club</h1>
+      <p>
+        ODU Surf Club is a community of surfers, creatives, and beach lovers at Old Dominion University.
+        From Virginia Beach sessions to movie nights, merch drops, road trips, and club events, we bring
+        surf culture to campus and build community in the 757.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://groupme.com/join_group/96791358/uQZxuDWe" target="_blank" rel="noopener noreferrer">Join the Club</a>
+        <a class="btn btn-secondary" href="#">Shop Merch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendar" class="section">
+    <div class="container">
+      <div class="section-label">Calendar</div>
+      <h2>Stay up to date with club events.</h2>
+      <p class="section-intro">
+        This section can hold your meeting dates, surf sessions, movie nights, fundraisers, beach cleanups,
+        or a Google Calendar embed later on.
+      </p>
+      <div class="calendar-box">
+        <h3 style="font-size: 24px; margin-bottom: 12px; color: #122033;">Upcoming calendar content goes here</h3>
+        <p>
+          Later, you can replace this with an embedded calendar, event flyers, or a list of all your important dates.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="officers" class="section tan-section">
+    <div class="container">
+      <div class="section-label">Officers</div>
+      <h2>Meet the team behind the club.</h2>
+      <p class="section-intro">
+        Add your real officer names, photos, and bios here whenever you’re ready.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>President</h3>
+          <p>Leads the club and helps shape the vision for events, trips, and community.</p>
+        </div>
+        <div class="card">
+          <h3>Vice President</h3>
+          <p>Keeps the club organized and helps everything run smoothly behind the scenes.</p>
+        </div>
+        <div class="card">
+          <h3>Treasurers</h3>
+          <p>Manage club funds, budgets, and support for meetings, merch, and events.</p>
+        </div>
+        <div class="card">
+          <h3>Marketing Chair</h3>
+          <p>Creates the club’s aesthetic, media, social presence, and overall visual identity.</p>
+        </div>
+        <div class="card">
+          <h3>Events Chair</h3>
+          <p>Plans gatherings, movie nights, meetups, and helps make club life feel active and real.</p>
+        </div>
+        <div class="card">
+          <h3>Sponsorship Chair</h3>
+          <p>Builds connections with brands, local businesses, and potential supporters of the club.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="section">
+    <div class="container">
+      <div class="section-label">Events Coming Up</div>
+      <h2>What club life looks like.</h2>
+      <p class="section-intro">
+        This section is for what’s actually happening next, from surf sessions to craft nights and movie nights.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>General Body Meetings</h3>
+          <p>Club-wide meetings to share updates, announce events, and build community.</p>
+        </div>
+        <div class="card">
+          <h3>Surf Sessions</h3>
+          <p>When the waves are up, use this section to promote your next paddle-out or meetup.</p>
+        </div>
+        <div class="card">
+          <h3>Movie Nights</h3>
+          <p>Show off club film nights, community hangs, and surf-inspired events.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sponsorships" class="section dark-section">
+    <div class="container">
+      <div class="section-label">Sponsorships</div>
+      <h2>Build ODU Surf Club into a real surf community brand.</h2>
+      <p class="section-intro">
+        Use this section to show why the club is worth supporting and what partners gain by working with you.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Local Support</h3>
+          <p>Highlight surf shops, restaurants, coffee spots, and local businesses that support the club.</p>
+        </div>
+        <div class="card">
+          <h3>Brand Outreach</h3>
+          <p>Feature sponsor logos, giveaways, raffle support, products, and future surf brand partnerships.</p>
+        </div>
+        <div class="card">
+          <h3>Why Sponsor Us</h3>
+          <p>Show your club culture, attendance, event photos, reach, and community impact to build credibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    ODU Surf Club • Norfolk / Virginia Beach • Follow along and join the community.
+  </footer>
+</body>
+</html>
